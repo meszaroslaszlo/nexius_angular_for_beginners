@@ -1,0 +1,18 @@
+<h1>Felhasználók listája</h1>
+<div class="wrapper-input">
+  <input type="text" [(ngModel)]="searchText" (keydown.enter)="onSearch()">
+  <button (click)="onSearch()">Keresés</button>
+  <button (click)="onCancel()">Mégse</button>
+</div>
+<table>
+  <tr>
+    <th>Azonosító</th>
+    <th>Név</th>
+    <th>E-mail</th>
+  </tr>
+  <tr *ngFor="let user of filteredUserList">
+    <td>{{ user.id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+</table>
